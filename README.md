@@ -1,0 +1,1 @@
+# typescript-fastify-knex-amqp-jest-stack
