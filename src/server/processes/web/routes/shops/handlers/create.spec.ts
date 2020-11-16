@@ -1,5 +1,5 @@
 import { FastifyRequest } from 'fastify';
-import { createShopHandler, ICreateShopBody } from './create';
+import { shopsCreateHandler, IShopsCreateBody } from './create';
 import ShopsRepository from '../../../../../repositories/shops';
 
 jest.mock('../../../../../repositories/shops');
@@ -11,9 +11,9 @@ describe('CreateShopHandler', () => {
         hostname: 'a',
         token: 'b'
       }
-    } as FastifyRequest<{ Body: ICreateShopBody }>;
+    } as FastifyRequest<{ Body: IShopsCreateBody }>;
 
-    await createShopHandler(request);
+    await shopsCreateHandler(request);
 
     const shopsRepositoryInstance = (ShopsRepository as jest.Mock).mock.instances[0];
 
@@ -26,9 +26,9 @@ describe('CreateShopHandler', () => {
         hostname: 'a',
         token: 'b'
       }
-    } as FastifyRequest<{ Body: ICreateShopBody }>;
+    } as FastifyRequest<{ Body: IShopsCreateBody }>;
 
-    const response = await createShopHandler(request);
+    const response = await shopsCreateHandler(request);
 
     expect(response.success).toBeTruthy();
   });
