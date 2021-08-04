@@ -10,11 +10,11 @@ const knex = db.knex;
 knex.migrate
   .latest()
   .then(() => knex.migrate.currentVersion())
-  .then((currentVersion) => {
+  .then((currentVersion: string) => {
     console.log('Current version: ', currentVersion);
     process.exit(0);
   })
-  .catch((error) => {
+  .catch((error: Error) => {
     console.error(error.message);
     process.exit(1);
   });

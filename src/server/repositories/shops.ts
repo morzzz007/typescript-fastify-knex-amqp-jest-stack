@@ -1,4 +1,4 @@
-import knex from 'knex';
+import { Knex } from 'knex';
 import connection from '../db';
 
 export interface Shop {
@@ -10,7 +10,7 @@ export interface Shop {
 }
 
 export default class ShopsRepository {
-  db: knex;
+  db: Knex;
 
   constructor() {
     this.db = connection.knex;
