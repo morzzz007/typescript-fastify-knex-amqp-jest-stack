@@ -2,7 +2,7 @@ postgres:
   image: postgres:9.6.3
   environment:
     - POSTGRES_USER=developer
-    - POSTGRES_PASSWORD=development_secret
+    - POSTGRES_PASSWORD=secret
     - POSTGRES_DB=connector
   ports:
     - 5432:5432
@@ -20,7 +20,7 @@ postgres_test:
   image: postgres:9.6.3
   environment:
     - POSTGRES_USER=developer
-    - POSTGRES_PASSWORD=development_secret
+    - POSTGRES_PASSWORD=secret
     - POSTGRES_DB=connector_test
   ports:
     - 5433:5432

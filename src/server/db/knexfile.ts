@@ -2,7 +2,7 @@ import { db } from '../config';
 
 module.exports = {
   client: 'pg',
-  connection: db.pgConnectionString,
+  connection: db.connection,
   pool: {
     min: db.poolMin,
     max: db.poolMax,
